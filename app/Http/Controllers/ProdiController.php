@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prodi;
+
 use Illuminate\Http\Request;
 
 class ProdiController extends Controller
@@ -32,6 +33,7 @@ public function save(Request $request)
 
     return redirect()->route('/prodi')->with('success', 'Program Studi berhasil ditambahkan');
 }
+
 public function edit($id)
 {
     $prodi = Prodi::findOrFail($id);
@@ -49,13 +51,13 @@ public function update(Request $request, $id)
         'nama' => $request->nama
     ]);
 
-    return redirect()->route('prodi')->with('success', 'Program Studi berhasil diupdated');
+    return redirect()->route('/prodi')->with('success', 'Program Studi berhasil diupdated');
 }
 public function delete($id)
 {
     $prodi = Prodi::findOrFail($id);
     $prodi->delete();
 
-    return redirect()->route('prodi')->with('success', 'Data Program Studi berhasil dihapus');
+    return redirect()->route('/prodi')->with('success', 'Data Program Studi berhasil dihapus');
 }
 }
