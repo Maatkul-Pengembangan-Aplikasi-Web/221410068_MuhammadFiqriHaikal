@@ -45,7 +45,7 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = Mahasiswa::findOrFail($id);
         $prodis = Prodi::all();
-        return view('mahasiswa.edit', compact('mahasiswa', 'prodis'));
+        return view('mahasiswa/edit', compact('mahasiswa', 'prodis'));
     }
 
     /**
@@ -92,7 +92,7 @@ class MahasiswaController extends Controller
     public function create()
     {
         $prodis = Prodi::all();
-        return view('mahasiswa.create', compact('prodis'));
+        return view('mahasiswa/create', compact('prodis'));
     }
 
     public function save(Request $request)
